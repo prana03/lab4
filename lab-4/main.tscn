@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfkshks50ho36"]
+
+[ext_resource type="Texture2D" uid="uid://ekeh2rq4q1w5" path="res://icon.svg" id="1_ig7tw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
+sky_top_color = Color(0.63023, 0.266262, 0.697188, 1)
+sky_horizon_color = Color(0.666605, 0.608268, 0.688249, 1)
+ground_bottom_color = Color(0.108709, 0.239332, 0.128328, 1)
+ground_horizon_color = Color(0.666605, 0.608268, 0.688249, 1)
+
+[sub_resource type="Sky" id="Sky_0xm2m"]
+sky_material = SubResource("ProceduralSkyMaterial_ig7tw")
+
+[sub_resource type="Environment" id="Environment_h2yge"]
+background_mode = 2
+sky = SubResource("Sky_0xm2m")
+tonemap_mode = 2
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+light_color = Color(1, 0.938667, 0.08, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h2yge")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.998646, 0.0516437, -0.00629192, -0.0514775, 0.998381, 0.0242059, 0.0075318, -0.0238492, 0.999687, -3.39876, 1.58857, -0.585832)
+texture = ExtResource("1_ig7tw")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.994909, 0.0861697, -0.0522551, -0.0996735, 0.917894, -0.384105, 0.0148664, 0.387358, 0.92181, -3.17963, 2.07397, 1.94885)
+fov = 105.554
+
+[node name="box" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.00464266, 0.997049, 0.0766332, 0.990285, -0.00606637, 0.138922, 0.138977, 0.0765336, -0.987334, -1.91786, 1.27322, -1.18192)
